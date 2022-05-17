@@ -1,5 +1,5 @@
-export function photographerFactory(data) {
-  const {name, portrait} = data;
+function photographerFactory(data) {
+  const { name, portrait } = data;
 
   const picture = `assets/photographers/${portrait}`;
 
@@ -13,5 +13,6 @@ export function photographerFactory(data) {
     article.appendChild(h2);
     return article;
   }
-  return {name, picture, getUserCardDOM};
+  return { name, picture, getUserCardDOM };
 }
+export default photographerFactory;

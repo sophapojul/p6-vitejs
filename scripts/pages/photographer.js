@@ -1,1 +1,1 @@
-import {displayModal, closeModal} from '../utils/contactForm';
+import { displayModal, closeModal } from '../utils/contactForm';
