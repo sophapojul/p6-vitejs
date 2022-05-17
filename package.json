@@ -1,0 +1,13 @@
+{
+  "name": "p6-front-end-fisheye-vitejs",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.9.9"
+  }
+}
