@@ -1,10 +1,10 @@
 import '../../css/style.scss';
-import photographerFactory from '../factories/photographer';
+import { photographerFactory } from '../factories/photographer';
 
 /**
  * It fetches the data from the photographers.json file, parses the data into JSON, and returns the
  * photographers array
- * @returns  {Promise.<{ name: string, id: number, city: string, country: string, tagline: string, price: number, portrait: string}>}  An array of objects.
+ * @returns  {Promise.<{ name: string, id: number, city: string, country: string, tagline: string, price: number, portrait: string}[]>}  An array of objects.
  */
 async function getPhotographers() {
   const res = await fetch('data/photographers.json');
