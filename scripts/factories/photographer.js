@@ -35,7 +35,7 @@ function createElement(
  */
 function photographerFactory(data) {
   const { id, name, portrait, city, country, tagline, price } = data;
-  const picture = `assets/photographers/${portrait}`;
+  const picture = `assets/images/${portrait}`;
   /**
    * It creates a DOM element for a user card.
    * @returns  {HTMLElement} the article element.
