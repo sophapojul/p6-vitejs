@@ -3,15 +3,18 @@
  *
  * data: the object passed as an argument
  * getUserCardDOM: a function that returns a DOM element
- * @param   {Object} data - the data object that will be used to create the photographer object
- * @returns   {Object} An object with two properties: data and getUserCardDOM.
+ * @param   {{ name: string, id: number, city: string, country: string, tagline: string, price: number, portrait: string}} data - the data object that will be used to create the photographer object
+ * @typedef  {Object} Object
+ * @property  {Object} data - the object
+ * @property  {function} getUserCardDOM - a function that returns a DOM element
+ * @return   {Object} An object with two properties: data and getUserCardDOM.
  */
 function photographerFactory(data) {
   const { name, portrait, city, country, tagline, price } = data;
   const picture = `assets/photographers/${portrait}`;
   /**
    * It creates a DOM element for a user card.
-   * @returns the article element.
+   * @returns  {HTMLElement} the article element.
    */
   function getUserCardDOM() {
     const article = document.createElement('article');
