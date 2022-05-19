@@ -6,7 +6,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "serve": "vite build && vite preview"
+    "serve": "vite build && vite preview",
+    "doc": "jsdoc -c jsdoc.json",
+    "lint": "eslint scripts",
+    "lint:fix": "eslint --fix scripts"
   },
   "devDependencies": {
     "eslint": "^8.15.0",
@@ -14,6 +17,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jsdoc": "^3.6.10",
     "prettier": "^2.6.2",
     "sass": "^1.51.0",
     "vite": "^2.9.9"
