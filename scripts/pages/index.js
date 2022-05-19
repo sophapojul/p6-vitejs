@@ -7,7 +7,7 @@ import photographerFactory from '../factories/photographer';
  * @returns  {Promise.<{ name: string, id: number, city: string, country: string, tagline: string, price: number, portrait: string}>}  An array of objects.
  */
 async function getPhotographers() {
-  const res = await fetch('/data/photographers.json');
+  const res = await fetch('data/photographers.json');
   const data = await res.json();
   const { photographers } = data;
   return photographers;
