@@ -47,6 +47,9 @@ function photographerFactory(data) {
     createElement(article, 'div', `${city}, ${country}`);
     createElement(article, 'p', tagline);
     createElement(article, 'span', `${price}€/jour`);
+    const img = article.firstElementChild;
+    const openWindow = () => window.open('photographer.html', '_blank');
+    img.addEventListener('click', openWindow);
     return article;
   }
   return {
