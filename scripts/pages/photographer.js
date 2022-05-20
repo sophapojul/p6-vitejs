@@ -1,8 +1,8 @@
 import '../../css/style.scss';
 import { displayModal, closeModal } from '../utils/contactForm';
 
-document
-  .querySelector('.photograph-header .contact_button')
-  .addEventListener('click', displayModal);
+const openBtn = document.querySelector('.photograph-header .contact_button');
+const closeImg = document.querySelector('.modal img');
 
-document.querySelector('.modal img').addEventListener('click', closeModal);
+openBtn.addEventListener('click', displayModal);
+closeImg.addEventListener('click', closeModal);
