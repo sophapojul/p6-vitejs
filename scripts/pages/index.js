@@ -30,9 +30,9 @@ const displayData = async (photographers) => {
 /**
  * It fetches the data from the API, then displays it on the page
  */
-// async function init() {
-const photographers = await getPhotographers();
-displayData(photographers);
-// }
+(async () => {
+  const photographers = await getPhotographers();
+  displayData(photographers);
+})();
 
 // init();
