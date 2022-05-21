@@ -1,3 +1,17 @@
+let WindowObjectReference = null;
+/**
+ * If the window is already open, focus on it, otherwise open a new window
+ * @param  {String} strUrl - The URL of the page to open in the new window.
+ */
+function openWindow(strUrl) {
+  if (WindowObjectReference == null || WindowObjectReference.closed) {
+    /* si le pointeur vers l'objet window n'existe pas, ou s'il existe
+           mais que la fenêtre a été fermée */
+    WindowObjectReference = window.open(strUrl, '_blank');
+  } else {
+    WindowObjectReference.focus();
+  }
+}
 /**
  * It creates an element, sets its text content, sets its attributes, sets its class name, and
  * appends it to a parent element
@@ -48,8 +62,8 @@ function photographerFactory(data) {
     createElement(article, 'p', tagline);
     createElement(article, 'span', `${price}€/jour`);
     const img = article.firstElementChild;
-    const openWindow = () => window.open('photographer.html', '_blank');
-    img.addEventListener('click', openWindow);
+    const urlPhotographer = 'photographer.html';
+    img.addEventListener('click', () => openWindow(urlPhotographer));
     return article;
   }
   return {
