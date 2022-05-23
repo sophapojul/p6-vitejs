@@ -3,11 +3,14 @@ let WindowObjectReference = null;
  * If the window is already open, focus on it, otherwise open a new window
  * @param  {String} strUrl - The URL of the page to open in the new window.
  */
-function openWindow(strUrl) {
+function openWindow(strUrl, val) {
+  const urlPhotograph = new URL(strUrl, window.location.href);
+  urlPhotograph.search = `?id=${val}`;
+  // || WindowObjectReference.location.search !== paramsPhotograph
   if (WindowObjectReference == null || WindowObjectReference.closed) {
     /* si le pointeur vers l'objet window n'existe pas, ou s'il existe
            mais que la fenêtre a été fermée */
-    WindowObjectReference = window.open(strUrl, '_blank');
+    WindowObjectReference = window.open(urlPhotograph, '_blank');
   } else {
     WindowObjectReference.focus();
   }
@@ -62,8 +65,11 @@ function photographerFactory(data) {
     createElement(article, 'p', tagline);
     createElement(article, 'span', `${price}€/jour`);
     const img = article.firstElementChild;
-    const urlPhotographer = 'photographer.html';
-    img.addEventListener('click', () => openWindow(urlPhotographer));
+    const photographPathName = 'photographer.html';
+    img.addEventListener('click', () => {
+      const photographId = this.data.id;
+      openWindow(photographPathName, photographId);
+    });
     return article;
   }
   return {

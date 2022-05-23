@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,7 +13,7 @@
   </head>
   <body>
     <header>
-      <img src="assets/images/logo.png" class="logo" />
+      <img src="assets/images/logo.png" class="logo" alt="logo" />
     </header>
     <main id="main">
       <div class="photograph-header">
@@ -24,14 +24,25 @@
       <div class="modal">
         <header>
           <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" />
+          <img
+            src="assets/icons/close.svg"
+            role="button"
+            aria-label="croix pour fermer la modale"
+          />
         </header>
-        <form>
+        <form id="contactForm">
           <div>
-            <label>Prénom</label>
-            <input />
+            <label for="prenom">Prénom</label>
+            <input
+              type="text"
+              id="prenom"
+              name="prenom"
+              form="contactForm"
+              required
+              autofocus
+            />
           </div>
-          <button class="contact_button">Envoyer</button>
+          <button type="submit" class="contact_button">Envoyer</button>
         </form>
       </div>
     </div>
