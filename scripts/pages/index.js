@@ -1,6 +1,6 @@
 import '../../css/style.scss';
 import { photographerFactory } from '../factories/photographer';
-import getPhotographers from '../utils/api';
+import { getPhotographers } from '../utils/api';
 
 /**
  * It takes an array of photographer objects, loops through them, creates a photographer model for each
